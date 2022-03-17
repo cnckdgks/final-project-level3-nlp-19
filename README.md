@@ -1,62 +1,94 @@
-# final-project-level3-nlp-19
-## Collaboration tool
-> Notion  
-> Microsoft Todo  
-> Google drive  
+# AI Paperboy
 
-## Responsibilities
+## 📋 Project Abstract
 
-### 박별이
+### Purpose
 
-### 이준수
+* 사용자가 질문으로 요청하면 답변이 있는 뉴스 기사를 스크랩 해주는 서비스
 
-### 최웅준
-#### Project Management
-> package directory management
-### data engineering
-> train data cleansing
+### Functions
+* 기사를 읽고 다시 보고 싶은 기사 스크랩 기능
+* 실시간 질문에 대한 답변 기사 AI 스크랩 기능
+* 일정 시간마다 기사 목록 업데이트 후 질문에 대한 답변 기사 AI 스크랩 기능
 
-#### modeling
-> test with tiny dataset  
-> generation model error analysis  
-> extraction model overfitted to train set   
-> error analysis on generation model   
-> overfitted extraction model  to train set   
+## 👨‍👨‍👧‍👦 Team Covit-19
 
-#### ml_pipeline code
-> extraction_pre_process  
-> generation_pre_process  
-> generation_compute_metrics  
-> configuration  
-> building tiny dataset 
-#### prototyping
-> reader model demo
-#### database
-> wiki_news db
-#### backend
-> homepage_news title list  with wiki_news_db  
-> ai scrap news title list  with ai_scrap_db  
-> my scrap news title list  with user_scrap_db  
-#### frontend
-> homepage_news title list  
-> ai scrap news title list  
-> my scrap news title list  
+### Members
 
-### 추창한
+| <center>박별이</center> | <center>이준수</center> | <center>최웅준</center> | <center>추창한</center>
+| -------- | -------- | -------- | -------- |
+| [<img src="https://i.imgur.com/1zMaAt1.png" height=100px width=100px></img>](https://github.com/ParkByeolYi) | [<img src="https://i.imgur.com/o3BFRGk.png" height=100px width=100px></img>](https://github.com/JunsooLee) | [<img src="https://i.imgur.com/GzN3ZOv.png" height=100px width=100px></img>](https://github.com/woongjoonchoi) | [<img src="https://i.imgur.com/S4cM768.png" height=100px width=100px></img>](https://github.com/cnckdgks) |
+| <center>[github](https://github.com/ParkByeolYi)</center> | <center>[github](https://github.com/JunsooLee)</center> | <center>[github](https://github.com/woongjoonchoi)</center> | <center>[github](https://i.imgur.com/S4cM768.png)</center> |
 
-## Demo(Tracer Bullet)
-### login
-![12-22-08-31](https://user-images.githubusercontent.com/50165842/147010980-eed7db8f-66a3-416f-a734-a9d568be24cb.gif)
 
-### home
-![12-22-08-34](https://user-images.githubusercontent.com/50165842/147011118-e815425b-c799-45a2-aada-e20c271a0069.gif)
+### Responsibilities
+|                     | 박별이 | 이준수 | 최웅준 | 추창한 |
+| ------------------- | ------ | ------ | ------ | ------ |
+| Data collection <br> make test dataset and analysis | common | common | common | common |
+| Code refactoring    | Retrieval | post_processing <br> train |extraction_pre_process <br>generation_pre_process <br>generation_compute_metrics <br>configuration  <br>building tiny dataset  | Retrieval |
+| User flow/Data flow |        | User Flow <br> Data Flow |    training pipeline    |  User Flow<br> Data Flow  |
+| Modeling            | Apply BM 25       | build train dataset <br> model training | train with tiny dataset <br>training reader model <br> error analysis on generation model         |   Apply BM 25   |
+| Prototyping         |        |        |  reader model demo      |  ODQA model / Batch Serving      |
+| Frontend            |  web design <br> sign in <br> sign up <br> news scrap  | article_form <br>performance improvement with UI policy |  homepage_news title list <br> ai scrap news title list <br>my scrap news title list   | performance improvement with UI policy  |
+| Backend             | build sqlite schema <br> sign in <br> sign up <br> news scrap | user_input |  homepage_news title list  with wiki_news_db<br> ai scrap news title list  with ai_scrap_db<br>my scrap news title list  with user_scrap_db     |  build layered architecture design <br> get article page and user_input with real time service <br> batch serving |
 
-### myscrap
-![12-22-08-35](https://user-images.githubusercontent.com/50165842/147011244-64db1c90-343a-42ee-87de-e940aaeb3d41.gif)
 
-### ai_scrap
-![12-22-08-37](https://user-images.githubusercontent.com/50165842/147011315-6e890362-57dd-4573-92e4-bb13c8c5432b.gif)
+### Collaboration tool
+<img src="https://img.shields.io/badge/Google Drive-4285F4?style=flat-square&logo=Google Drive&logoColor=white"/> <img src="https://img.shields.io/badge/MS ToDo-6264A7?style=flat-square&logo=Microsoft&logoColor=white"/> <img src="https://img.shields.io/badge/Notion-5E5E5E?style=flat-square&logo=Notion&logoColor=white"/> 
 
-### side-bar
-![12-22-08-38](https://user-images.githubusercontent.com/50165842/147011357-10b3dfc2-1aaa-4364-96da-c2b93765491b.gif)
+## 💾 Installation
+### 1. Set up the python environment:
+- Recommended python version 3.8.5
 
+```
+$ conda create -n venv python=3.8.5 pip
+$ conda activate venv
+```
+### 2. Install other required packages
+
+```
+$ cd $ROOT/final-project-level3-nlp-19/code
+$ poetry install
+$ poetry shell
+```
+
+## 🖥 Usage
+### 1. Project Structure
+```
+code
+├──routers/
+├──schema/
+├──services/
+├──templates/
+├──AIPaperboy.py
+└──model train file (.py)
+```
+**4 folder for serving**
+- **routers**: Controller
+- **schema**: Model
+- **sevices**: Project's functions
+- **templates**: HTML & CSS file
+
+### 2. Train
+```
+$ cd $ROOT/final-project-level3-nlp-19/code
+$ python train_copy.py --output_dir ./outputs  --run_extraction True --run_generation False --do_train --do_eval \
+--evaluation_strategy 'steps' --eval_steps 60 --logging_steps 60 --per_device_eval_batch_size 16 \
+ --per_device_train_batch_size 16 --save_strategy "no" --fp16 True --fp16_full_eval True --num_train_epochs 9 --report_to "wandb" \
+ --overwrite_output_dir
+```
+
+### 3. Inference
+```
+$ python inference_copy.py --output_dir ./outputs/test_dataset/ --dataset_name ../data/test_dataset/ --model_name_or_path ./models/train_dataset/ --do_predict  --overwrite_cache --overwrite_output_dir
+```
+
+### 4. Execute
+```
+$ cd $ROOT/final-project-level3-nlp-19/code
+$ python AIPaperboy.py --output_dir ./outputs/test_dataset/ --model_name_or_path ./models/train_dataset/ --dataset_name ../data/test_dataset/ --do_predict
+```
+
+## 📽 Demo
+* [AI Paperboy Demo Video](https://www.youtube.com/watch?v=n7oPu7vrQ8s)
+* [AI Paperboy Presentation](https://docs.google.com/presentation/d/1rpgp9knamiiqs4lITZMEiixSA8sfWyvv/edit?usp=sharing&ouid=110643334622897859461&rtpof=true&sd=true)
