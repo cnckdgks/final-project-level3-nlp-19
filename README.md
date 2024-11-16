@@ -11,26 +11,6 @@
 * 실시간 질문에 대한 답변 기사 AI 스크랩 기능
 * 일정 시간마다 기사 목록 업데이트 후 질문에 대한 답변 기사 AI 스크랩 기능
 
-## 👨‍👨‍👧‍👦 Team Covit-19
-
-### Members
-
-| <center>박별이</center> | <center>이준수</center> | <center>최웅준</center> | <center>추창한</center>
-| -------- | -------- | -------- | -------- |
-| [<img src="https://i.imgur.com/1zMaAt1.png" height=100px width=100px></img>](https://github.com/ParkByeolYi) | [<img src="https://i.imgur.com/o3BFRGk.png" height=100px width=100px></img>](https://github.com/JunsooLee) | [<img src="https://i.imgur.com/GzN3ZOv.png" height=100px width=100px></img>](https://github.com/woongjoonchoi) | [<img src="https://i.imgur.com/S4cM768.png" height=100px width=100px></img>](https://github.com/cnckdgks) |
-| <center>[github](https://github.com/ParkByeolYi)</center> | <center>[github](https://github.com/JunsooLee)</center> | <center>[github](https://github.com/woongjoonchoi)</center> | <center>[github](https://i.imgur.com/S4cM768.png)</center> |
-
-
-### Responsibilities
-|                     | 박별이 | 이준수 | 최웅준 | 추창한 |
-| ------------------- | ------ | ------ | ------ | ------ |
-| Data collection <br> make test dataset and analysis | common | common | common | common |
-| Code refactoring    | Retrieval | post_processing <br> train |extraction_pre_process <br>generation_pre_process <br>generation_compute_metrics <br>configuration  <br>building tiny dataset  | Retrieval |
-| User flow/Data flow |        | User Flow <br> Data Flow |    training pipeline    |  User Flow<br> Data Flow  |
-| Modeling            | Apply BM 25       | build train dataset <br> model training | train with tiny dataset <br>training reader model <br> error analysis on generation model         |   Apply BM 25   |
-| Prototyping         |        |        |  reader model demo      |  ODQA model / Batch Serving      |
-| Frontend            |  web design <br> sign in <br> sign up <br> news scrap  | article_form <br>performance improvement with UI policy |  homepage_news title list <br> ai scrap news title list <br>my scrap news title list   | performance improvement with UI policy  |
-| Backend             | build sqlite schema <br> sign in <br> sign up <br> news scrap | user_input |  homepage_news title list  with wiki_news_db<br> ai scrap news title list  with ai_scrap_db<br>my scrap news title list  with user_scrap_db     |  build layered architecture design <br> get article page and user_input with real time service <br> batch serving |
 
 
 ### Collaboration tool
